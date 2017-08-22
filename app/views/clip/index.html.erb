@@ -1,0 +1,185 @@
+<div class="panel-x-content">
+  <div class="row col-xs-10 col-md-10 col-xl-10 col-md-offset-1">
+    <div class="x_panel">
+      <div class="x_title">
+        <h4>▼動画チェック</h4>
+        <ul class="nav navbar-right panel_toolbox">
+          <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div class="x_content">
+        <h4 class="text-red">※一度にチェック可能な動画は「○○○個」です。</h4>
+        <div class="x_content">
+          <input id="chooseFolder1" type="hidden" val=""/>
+          <div class="col-xs-12 col-md-12 form-group">
+            <label class="control-label col-md-2">フォルダ選択:</label>
+            <div class="col-xs-10 col-md-10 clip_chooser">
+              <input id="clip_input-folder" name="clip_input-folder[]" class="file-loading" type="file" multiple webkitdirectory placeholder="フォルダを選択してください">
+              <div id="errorBlock" class="help-block"></div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-sm-12 pull-right">
+            <ul class="list-button">
+              <li>
+                <button id="clip_check" type="button" class="btn btn-default clip_upload">動画チェック</button>
+              </li>
+              <li>
+                <button id="clip_clear" type="button" class="btn btn-default">結果をクリア</button>
+              </li>
+            </ul>
+          </div>
+          <div class="x_content">
+            <div class="row">
+              <div class="col-md-6">
+                <h4>チェック結果：</h4>
+              </div>
+              <div class="col-md-6">
+                <button id="clip_csv_download" type="button" class="btn btn-info pull-right">
+                  <i class="glyphicon glyphicon-download-alt"></i>
+                  <span class="hidden-xs">ダウンロード</span>
+                </button>
+              </div>
+            </div>
+            <div class="row table-result-container">
+              <table id="clip-result" class="table-custom table table-fixed table-bordered">
+                <thead>
+                <tr>
+                  <th class="title-input" style="width: 20%">動画ファイル</th>
+                  <th class="title-output" style="width: 15%">音声コーデック</th>
+                  <th class="title-output" style="width: 15%">動画コーデック</th>
+                  <th class="title-output" style="width: 10%">アスペクト比</th>
+                  <th class="title-output" style="width: 15%">最小映像ビットレート</th>
+                  <th class="title-output" style="width: 15%">最小音声ビットレート</th>
+                  <th class="title-output" style="width: 10%">その他</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="x_panel">
+      <div class="x_title">
+        <h4>▼画像チェック</h4>
+        <ul class="nav navbar-right panel_toolbox">
+          <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div class="x_content">
+        <h4 class="text-red">※一度にチェック可能な画像数は「○○○個」です。</h4>
+        <div class="x_content">
+          <input id="chooseFolder2" type="hidden" val=""/>
+          <div class="col-xs-12 col-md-12 form-group">
+            <label class="control-label col-md-2">フォルダ選択:</label>
+            <div class="col-xs-10 col-md-10 image_chooser">
+              <input id="image_input-folder" name="image_input-folder[]" class="file-loading" type="file" multiple webkitdirectory placeholder="フォルダを選択してください"/>
+              <div id="errorBlock" class="help-block"></div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-sm-12 pull-right">
+            <ul class="list-button">
+              <li>
+                <button id="image_check" type="button" class="btn btn-default image_upload">画像チェック</button>
+              </li>
+              <li>
+                <button id="image_clear" type="button" class="btn btn-default">結果をクリア</button>
+              </li>
+            </ul>
+          </div>
+          <div class="x_content">
+            <div class="row">
+              <div class="col-md-6">
+                <h4>チェック結果：</h4>
+              </div>
+              <div class="col-md-6">
+                <button id="image_csv_download" type="button" class="btn btn-info pull-right">
+                  <i class="glyphicon glyphicon-download-alt"></i>
+                  <span class="hidden-xs">ダウンロード</span>
+                </button>
+              </div>
+            </div>
+            <div class="row table-result-container">
+              <table id="image-result" class="table-custom table table-fixed table-bordered">
+                <thead>
+                <tr>
+                  <th class="col-md-2 title-input">ファイル名</th>
+                  <th class="col-md-1 title-input">拡張子</th>
+                  <th class="col-md-2 title-input">ピクセルサイズ</th>
+                  <th class="col-md-2 title-input">ファイルサイズ</th>
+                  <th class="col-md-1 title-output">拡張子</th>
+                  <th class="col-md-2 title-output">ピクセルサイズ</th>
+                  <th class="col-md-2 title-output">ファイルサイズ</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="x_panel">
+      <div class="x_title">
+        <h4>▼テキストチェック</h4>
+        <ul class="nav navbar-right panel_toolbox">
+          <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div class="x_content">
+        <h4 class="text-red">※一度にチェック可能なキーワードは「○○○個」です。</h4>
+        <textarea id="keyword_input" class="text-area-custom textarea-inputText" rows="16"></textarea>
+        <div class="col-md-6 col-sm-12 pull-right">
+          <ul class="list-button">
+            <li>
+              <button id="keyword_check" type="button" class="btn btn-info btn-default">テキストチェック</button>
+            </li>
+            <li>
+              <button id="keyword_clear" type="button" class="btn btn-default">結果をクリア</button>
+            </li>
+          </ul>
+        </div>
+
+        <div class="x_content">
+          <div class="row">
+            <div class="col-md-6">
+              <h4>チェック結果：</h4>
+            </div>
+            <div class="col-md-6">
+              <button id="keyword_csv_download" type="button" class="btn btn-info pull-right">
+                <i class="glyphicon glyphicon-download-alt"></i>
+                <span class="hidden-xs">ダウンロード</span>
+              </button>
+            </div>
+          </div>
+          <div class="row table-result-container">
+            <table id="text-result" class="table-custom table table-fixed table-bordered">
+              <thead>
+              <tr>
+                <th class="col-xs-2 title-input">タイトル</th>
+                <th class="col-xs-8 title-input">説明文</th>
+                <th class="col-xs-1 title-output">タイトル</th>
+                <th class="col-xs-1 title-output">説明文</th>
+              </tr>
+              </thead>
+              <tbody>
+
+              </tbody>
+            </table>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

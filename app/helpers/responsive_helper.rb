@@ -1,0 +1,2 @@
+module ResponsiveHelper
+end

@@ -1,0 +1,146 @@
+<div class="panel-x-content">
+  <div class="row col-xs-10 col-md-10 col-xl-10 col-md-offset-1">
+    <div class="x_panel">
+      <div class="x_title">
+        <h4>▼画像チェック</h4>
+        <ul class="nav navbar-right panel_toolbox">
+          <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+          </li>
+        </ul>
+      </div>
+      <h4 class="text-red">※一度にチェック可能な画像数は「○○○個」です。</h4>
+      <div class="x_content">
+
+        <input id="chooseFolder" type="hidden" val=""/>
+        <div class="col-xs-12 col-md-12 form-group">
+          <label class="control-label col-md-2 col-sm-3">フォルダ選択:</label>
+          <div class="col-xs-8 col-md-8">
+            <input id="input-folder" name="input-folder[]" class="file-loading" type="file" multiple webkitdirectory placeholder="フォルダを選択してください">
+            <div id="errorBlock" class="help-block"></div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-12 form-group">
+          <label class="control-label col-md-2 col-sm-3">チェック対象媒体:</label>
+          <div class="col-md-2 col-sm-3">
+            <select id="media_type" class="form-control">
+              <option value="">選択してください</option>
+              <option value="YDN">YDNレスポンシブ</option>
+              <option value="GDN">GDNレスポンシブ</option>
+            </select>
+          </div>
+          <div class="col-md-1 col-md-offset-5">
+            <button class="float-right btn btn-info upload">
+              <span class="hidden-xs">画像チェック</span></button>
+          </div>
+        </div>
+        <div class="col-xs-3 col-sm-5 col-xs-offset-2">
+          <p>※YDNの下記チェックには対応していません</p>
+          <ul class="">
+            <li>画像の透過背景</li>
+            <li>画像の枠線</li>
+            <li>画像の角丸</li>
+          </ul>
+        </div>
+        <div class="row col-md-1 col-sm-2 col-md-offset-2">
+          <button id="file-clear" class="float-right btn btn-default">結果をクリア</button>
+        </div>
+      </div>
+      <div class="x_content" id="resultTableFile">
+        <div class="row">
+          <div class="col-xs-6">
+            <h4>チェック結果：</h4>
+          </div>
+          <div class="col-xs-6">
+            <button id="downloadCsv" class="pull-right btn btn-info">
+              <i class="glyphicon glyphicon-download-alt"></i>
+              <span class="hidden-xs">ダウンロード</span></button>
+          </div>
+        </div>
+        <table class="col-md-12 table-custom table table-fixed table-bordered">
+          <thead>
+          <tr>
+            <th class="col-md-2 title-input">ファイル名</th>
+            <th class="col-md-1 title-input">拡張子</th>
+            <th class="col-md-2 title-input">ピクセルサイズ</th>
+            <th class="col-md-2 title-input">ファイルサイズ</th>
+            <th class="col-md-1 title-output">拡張子</th>
+            <th class="col-md-2 title-output">ピクセルサイズ</th>
+            <th class="col-md-2 title-output">ファイルサイズ</th>
+          </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="x_panel">
+      <div class="x_title">
+        <h4>▼テキストチェック</h4>
+        <ul class="nav navbar-right panel_toolbox">
+          <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+          </li>
+        </ul>
+      </div>
+      <h4 class="text-red">※一度にチェック可能な行数は「○○○行」です。</h4>
+      <div class="x_content">
+        <textarea id="ta-InputText" name="text" class="text-area-custom textarea-inputText" rows="16"></textarea>
+        <div class="col-md-12 col-sm-12">
+          <ul class="list-button">
+            <li>
+              <button id="text-check" type="button" class="btn btn-info btn-default">テキストチェック</button>
+            </li>
+            <li>
+              <button id="text-clear" type="button" class="btn btn-default">結果をクリア</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="x_content">
+        <div class="row">
+          <div class="col-xs-6">
+            <h4>チェック結果：</h4>
+          </div>
+          <div class="col-xs-6">
+            <button id="text-download-csv" class="pull-right btn btn-info">
+              <i class="glyphicon glyphicon-download-alt"></i>
+              <span class="hidden-xs">ダウンロード</span></button>
+          </div>
+        </div>
+        <div class="row table-result-container">
+          <div class="col-md-12">
+            <!-- YDN result table-->
+            <table id="ydn-table-result" class="table-custom table table-fixed table-bordered">
+              <thead>
+              <tr>
+                <th class="col-xs-3 title-input">タイトル</th>
+                <th class="col-xs-3 title-input">説明文</th>
+                <th class="col-xs-3 title-output">タイトル</th>
+                <th class="col-xs-3 title-output">説明文</th>
+              </tr>
+              </thead>
+              <tbody>
+              <!--result-->
+              </tbody>
+            </table>
+            <!-- GDN result table-->
+            <table id="gdn-table-result" class="table-custom table table-fixed table-bordered" style="display: none;">
+              <thead>
+              <tr>
+                <th class="col-xs-2 title-input">短い見出し</th>
+                <th class="col-xs-2 title-input">長い見出し</th>
+                <th class="col-xs-2 title-input">説明文</th>
+                <th class="col-xs-2 title-output">短い見出し</th>
+                <th class="col-xs-2 title-output">長い見出し</th>
+                <th class="col-xs-2 title-output">説明文</th>
+              </tr>
+              </thead>
+              <tbody>
+              <!--result-->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

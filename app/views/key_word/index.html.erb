@@ -1,0 +1,64 @@
+<div class="panel-x-content">
+  <div class="row col-xs-10 col-md-10 col-xl-10 col-md-offset-1">
+    <div class="x_panel">
+      <div class="x_title">
+        <h4 class="text-red">一度にチェック可能な行数は「○○○行」です。</h4>
+        <ul class="nav navbar-right panel_toolbox">
+          <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div class="x_content">
+        <textarea id="keyword_input" class="text-area-custom textarea-inputText" rows="16"></textarea>
+        <form class="row option-container">
+          <div class="col-md-6 col-sm-12">
+            <div class="form-control-custom">
+              <label class="combotaget-title">チェック対象媒体： </label>
+              <select id="media_combobox" class="combobox input-large form-control combotaget" name="normal">
+                <option value="" disabled selected>選択してください</option>
+                <option value="yahoo">Yahoo!</option>
+                <option value="google">Adwords</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <ul class="list-button">
+              <li>
+                <button id="keyword_check" type="button" class="btn btn-info btn-default">キーワードチェック</button>
+              </li>
+              <li>
+                <button id="keyword_clear" type="button" class="btn btn-default">結果をクリア</button>
+              </li>
+            </ul>
+          </div>
+        </form>
+      </div>
+      
+      <div class="x_content">
+        <div class="row">
+          <div class="col-md-6">
+            <h4>チェック結果：</h4>
+          </div>
+          <div class="col-md-6">
+            <button id="keyword_csv_download" type="button" class="btn btn-info pull-right">
+              <i class="glyphicon glyphicon-download-alt"></i>
+              <span class="hidden-xs">ダウンロード</span>
+            </button>
+          </div>
+          <div class="col-md-12 table-result-container">
+            <table id="table-result" class="table-custom table table-fixed table-bordered">
+              <thead>
+              <tr>
+                <th class="col-xs-6 title-input">キーワード</th>
+                <th class="col-xs-6 title-output">キーワード</th>
+              </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

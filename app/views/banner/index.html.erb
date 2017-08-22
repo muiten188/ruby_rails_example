@@ -1,0 +1,71 @@
+<div class="panel-x-content">
+  <div class="row col-xs-10 col-md-10 col-xl-10 col-md-offset-1">
+    <div class="x_panel">
+      <div class="x_title">
+        <h4 class="text-red">※一度にチェック可能なバナー数は「○○○個」です。</h4>
+        <ul class="nav navbar-right panel_toolbox">
+          <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div class="x_content">
+        <input id="chooseFolder" type="hidden" val=""/>
+        <div class="col-xs-12 col-md-12 form-group">
+          <label class="control-label col-md-2">フォルダ選択:</label>
+          <div class="col-xs-8 col-md-8">
+            <input id="input-folder" name="input-folder[]" class="file-loading" type="file" multiple webkitdirectory placeholder="フォルダを選択してください">
+            <div id="errorBlock" class="help-block"></div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-12 form-group">
+          <label class="control-label col-md-2">チェック対象媒体:</label>
+          <div class="col-md-2">
+            <select id="media_type" class="form-control">
+              <option value="">選択してください</option>
+              <option value="YDN">YDN</option>
+              <option value="GDN">GDN</option>
+            </select>
+          </div>
+          <div class="col-md-2 col-md-offset-5">
+            <button class="btn btn-info upload">
+              <span class="hidden-xs">バナーチェック</span></button>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-12 form-group">
+          <div class="col-md-2 col-md-offset-9">
+            <button id="file-clear" class="btn btn-default">
+              <span class="hidden-xs">結果をクリア</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="x_content" id="resultTable">
+        <div class="row">
+          <div class="col-xs-6">
+            <h4>チェック結果：</h4>
+          </div>
+          <div class="col-xs-1 pull-right">
+            <button id="downloadCsv" class="float-right btn btn-info">
+              <i class="glyphicon glyphicon-download-alt"></i>
+              <span class="hidden-xs">ダウンロード</span></button>
+          </div>
+        </div>
+        <table class="col-md-12 table-custom table table-fixed table-bordered">
+          <thead>
+          <tr>
+            <th class="col-md-2 title-input">ファイル名</th>
+            <th class="col-md-1 title-input">拡張子</th>
+            <th class="col-md-2 title-input">バナーサイズ</th>
+            <th class="col-md-2 title-input">ファイルサイズ</th>
+            <th class="col-md-1 title-output">拡張子</th>
+            <th class="col-md-2 title-output">バナーサイズ</th>
+            <th class="col-md-2 title-output">ファイルサイズ</th>
+          </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+

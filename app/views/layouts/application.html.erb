@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RegulationCheck</title>
+  <%= csrf_meta_tags %>
+  <%= yield(:css) %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', controller.controller_name, 'data-turbolinks-track': 'reload' %>
+  <%= yield(:js) %>
+</head>
+
+<body>
+<div class="menu fixed">
+  <div class="col-md-3 col-xl-3 col-xs-3">
+    <a href="#" id="logo">
+      <%= image_tag 'logo.png' %>
+    </a>
+  </div>
+  <div id="nav" class="col-md-6 col-xs-6 col-xl-6">
+    <div class="sliding-line" id="line-top" style="display: none;"></div>
+    <ul class="navigation">
+      <li href="<%= banner_index_path %>" page-slide="1" class="
+                <% if @is_banner_active %>active
+                <% end %>">
+            バナー広告
+      </li>
+      <li href="<%= text_index_path %>" page-slide="2" class="
+                <% if @is_text_active %>active
+                <% end %>">
+            テキスト広告
+      </li>
+      <li href="<%= keywords_path %>" page-slide="3" class="
+                <% if @is_keyword_active %>active
+                <% end %>">
+        キーワード
+      </li>
+      <li href="<%= responsive_index_path %>" page-slide="4" class="
+                <% if @is_responsive_active %>active
+                <% end %>">
+        レスポンシブ広告
+      </li>
+      <li href="<%= clip_path %>" page-slide="5" class="
+                <% if @is_clip_active %>active
+                <% end %>">
+        YDN動画広告
+      </li>
+    </ul>
+    <div class="sliding-line" id="line-bottom" style="display: none;"></div>
+  </div>
+</div>
+<div class="loader"></div>
+<div class="content"><%= yield %></div>
+</body>
+</html>
